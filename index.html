@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+    
+    
+        <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(".tablink").click();
+        });
+        const words = ["Web Developer", "Front-End Developer", "Programmer"];
+let i = 0;
+let timer;
+
+function typingEffect() {
+  let word = words[i].split("");
+  let loopTyping = function() {
+    if (word.length > 0) {
+      document.querySelector('.typing').innerHTML += word.shift();
+    } else {
+      deletingEffect();
+      return false;
+    };
+    timer = setTimeout(loopTyping, 200);
+  };
+  loopTyping();
+};
+
+function deletingEffect() {
+  let word = words[i].split("");
+  let loopDeleting = function() {
+    if (word.length > 0) {
+      word.pop();
+      document.querySelector('.typing').innerHTML = word.join("");
+    } else {
+      if (words.length > (i + 1)) {
+        i++;
+      } else {
+        i = 0;
+      };
+      typingEffect();
+      return false;
+    };
+    timer = setTimeout(loopDeleting, 100);
+  };
+  loopDeleting();
+};
+
+typingEffect();
+
+    </script>
+    
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">
+            <span>P</span><span>o</span><span>r</span><span>t</span><span>f</span><span>o</span><span>l</span><span>i</span><span>o</span>
+        </a>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a> 
+            <a href="#resume" >Resume</a>
+          <a href="#Certificate">Certificate</a>
+            <a href="#Work">Work</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home" class="home section">
+        <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h1>Kaviya<span> Shree E</span></h1>
+            <div class="typewriter">
+                <h3>And I'm a <p>Web Developer</p></h3>
+                              </div>
+            <div class="social-media">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-linkedin'></i></a> 
+            </div>  
+            <a href="#" class="btn">Download CV</a>
+        </div>
+        
+            <div class="girl-img">
+            <img src="girl.png" alt="gril" height="500" width="400">
+         </div>
+    </section>
+
+    <section id="resume" class="resume section">
+        <h1>WHY Hire me?</h1>
+        <div class="container">
+            <aside class="sidebar">
+                <button class="tablink" onclick="openTab(event, 'experience')">Experience</button>
+                <button class="tablink" onclick="openTab(event, 'education')">Education</button>
+                <button class="tablink" onclick="openTab(event, 'skills')">Skills</button>
+                <button class="tablink" onclick="openTab(event, 'about')">About Me</button>
+            </aside>
+            <div class="content">
+                <div id="experience" class="tabcontent active">
+                    <h2>My Experience</h2><br><br>
+                    <div class="experience-grid">
+                        <div class="experience-box">
+                            <h5>2024</h5>
+                            <h3>Web Developer Intern</h3>
+                            <p>Bharat Intern</p>
+                        </div>
+                        <div class="experience-box">
+                            <h5>2024</h5>
+                            <h3>Data Analyst Intern</h3>
+                            <p>Meriskill</p>
+                        </div>
+                        <div class="experience-box">
+                            <h5>2024</h5>
+                            <h3>C Developer Intern</h3>
+                            <p>InternPe</p>
+                        </div>
+                        <div class="experience-box">
+                            <h5>2024</h5>
+                            <h3>Java Developer Intern</h3>
+                            <p>Codsoft</p>
+                        </div>
+                        <div class="experience-box">
+                            <h5>2024</h5>
+                            <h3>Python Developer Intern</h3>
+                            <p>TechnoHacks EduTech</p>
+                        </div>
+                        <div class="experience-box">
+                            <h5>2024</h5>
+                            <h3>Android Development Intern</h3>
+                            <p>Prodigy InfoTech</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="education" class="tabcontent">
+                    <h2>My Education</h2><br><br>
+                    <div class="education-grid">
+                        <div class="education-box">
+                            <h5>2023</h5>
+                            <h3>Web Developer</h3>
+                            <p>Tech Institute</p>
+                        </div>
+                        <div class="education-box">
+                            <h5>2023 - 2024</h5>
+                            <h3>Programming Course C, C++, Java</h3>
+                            <p>Online Course</p>
+                        </div>
+                        <div class="education-box">
+                            <h5>2023 - 2024</h5>
+                            <h3>IOT Project</h3>
+                            <p>Online Course Platform</p>
+                        </div>
+                        <div class="education-box">
+                            <h5>2024</h5>
+                            <h3>Associate Degree in Electrical and Communication</h3>
+                            <p>Community College</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-resume">Download Resume</a>
+                </div>
+                <div id="skills" class="tabcontent">
+                    <h2>My Skills</h2>
+                    <div class="skill2">
+                        <div class="skill-item">
+                            <a href="#"><i class='bx bxl-html5'></i></a>
+                            <p>HTML</p>
+                        </div>
+                        <div class="skill-item">
+                            <a href="#"><i class='bx bxl-css3'></i></a>
+                            <p>CSS</p>
+                        </div>
+                        <div class="skill-item">
+                            <a href="#"><i class='bx bxl-javascript'></i></a>
+                            <p>JavaScript</p>
+                        </div>
+                        <div class="skill-item">
+                            <a href="#"><i class='bx bxl-python'></i></a>
+                            <p>Python</p>
+                        </div>
+                        <div class="skill-item">
+                            <a href="#"><i class='bx bxl-java'></i></a>
+                            <p>Java</p>
+                        </div>
+                        <div class="skill-item">
+                            <a href="#"><i class='bx bxl-c-plus-plus'></i></a>
+                            <p>C++</p>
+                        </div>
+                    </div>  
+                </div>
+                <div id="about" class="tabcontent">
+                    <h2>About Me</h2><br><br>
+                    <p>Hello! I am Kaviya Shree, an experienced developer with a passion for creating innovative applications. I specialize in Python, Java, and web development. Originally from India, I am available for freelance opportunities.</p><br><br>
+                    <div class="about-details">
+                        <div class="left-details">
+                            <p><strong>Name:</strong> Kaviya Shree</p>
+                            <p><strong>Experience:</strong> 1+ years</p>
+                            <p><strong>Nationality:</strong> Indian</p>
+                            <p><strong>Freelance:</strong> <span class="freelance-status">Available</span></p>
+                        </div>
+                        <div class="right-details">
+                            <p><strong>Phone:</strong> (+91) 123 456 789</p>
+                            <p><strong>Email:</strong> kaviyaexample@.com</p>
+                            <p><strong>Languages:</strong> English, Tamil</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Certificate" class="Certificate section">
+        
+        <div class="scontainer">
+            <h2>My Certificate</h2><br>
+        <div class="certificate-slider">
+           
+            <div class="certificate-container">
+                <img src="de.jpg" alt="Certificate 1">
+            </div>
+            <div class="certificate-container">
+                <img src="c++.jpg" alt="Certificate 2">
+            </div>
+            <div class="certificate-container">
+                <img src="DSA.jpg" alt="Certificate 3">
+            </div>
+            <div class="certificate-container">
+                <img src="pd.jpg" alt="Certificate 4">
+            </div>
+            <div class="certificate-container">
+                <img src="cb.jpg" alt="Certificate 5">
+              <div class="certificate-container">
+                <img src="IOt.jpg" alt="Certificate 6">
+            </div>
+            <div class="certificate-container">
+                <img src="java.jpg" alt="Certificate 7">
+            </div>
+            <div class="certificate-container">
+                <img src="bt.jpg" alt="Certificate 8">
+            </div>
+            <div class="certificate-container">
+                <img src="ws.jpg" alt="Certificate 9">
+            </div>
+            <div class="certificate-container">
+                <img src="AI.jpg" alt="Certificate 10">
+            </div>
+        </div>
+       </div>
+          </section>
+
+          <section id="Work">
+            <div class="dcontainer">
+                <input type="radio" name="project" id="project1" checked>
+                <input type="radio" name="project" id="project2">
+                <input type="radio" name="project" id="project3">
+    
+                <div id="content1" class="work-item">
+                    <h2>Smart Mining Helmet</h2>
+                    <p>The Smart Mining Helmet is an innovative project designed to enhance the safety and efficiency of miners. Equipped with various sensors and real-time monitoring capabilities, this helmet ensures that miners can work in a safer environment. The helmet features gas detection, real-time location tracking, and health monitoring, all integrated into a user-friendly design.</p>
+                    <img src="pro.jpg" alt="Smart Mining Helmet">
+                </div>
+    
+                <div id="content2" class="work-item">
+                    <h2>HR Analysis</h2>
+                    <p>The HR Analysis project focuses on leveraging data analytics to improve human resource management. By analyzing employee data, this project provides insights into employee performance, retention rates, and overall workforce productivity. The analysis helps HR professionals make informed decisions to enhance workplace efficiency and employee satisfaction.</p>
+                    <img src="HR.jpg" alt="HR Analysis">
+                </div>
+    
+                <div id="content3" class="work-item">
+                    <h2>Sales Dashboard</h2>
+                    <p>The Sales Dashboard project is a comprehensive tool designed to monitor and analyze sales data. It provides real-time insights into sales performance, trends, and key metrics. The dashboard helps sales teams track their progress, identify opportunities for growth, and make data-driven decisions to improve sales strategies.</p>
+                    <img src="sale.jpg" alt="Sales Dashboard">
+                </div>
+            </div>
+            
+            <label for="project1" class="navigation-label">&lt;</label>
+            <label for="project2" class="navigation-label">&lt;</label>
+            <label for="project3" class="navigation-label">&gt;</label>
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="contact-form">
+                <h2>Contact <span>Us</span></h2>
+                <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" name="firstname">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" name="lastname">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Type Your Message Here</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </div>
+            <div class="contact-details">
+                <h2>Contact <span>Details</span></h2>
+                <div class="detail-item">
+                    <i class="fas fa-phone-alt"></i> My Phone: <a href="tel:+1234567890">+1234567890</a>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-envelope"></i> My Email: <a href="mailto:example@example.com">kaviyaexample@.com</a>
+                </div>
+                <div class="detail-item">
+                    <i class="fab fa-linkedin"></i> My LinkedIn: <a href="https://linkedin.com/in/example">linkedin.com/in/</a>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-map-marker-alt"></i> My Address: Chennai, India
+                </div>
+            </div>
+        </div>
+    </section>  
+
+</body>
+</html>
